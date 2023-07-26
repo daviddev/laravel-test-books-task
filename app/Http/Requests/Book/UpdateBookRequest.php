@@ -25,7 +25,7 @@ class UpdateBookRequest extends FormRequest
         return [
             'title' => ['string', 'max:255'],
             'author' => ['string', 'max:255'],
-            'isbn' => ['string', 'max:20', "unique:books,isbn,{$this->book->id}"],
+            'isbn' => ['string', 'min:13', 'max:20', "unique:books,isbn,{$this->book->id}"],
             'published_at' => ['date'],
             'copies' => ['integer', 'min:1'],
         ];
