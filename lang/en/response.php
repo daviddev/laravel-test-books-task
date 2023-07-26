@@ -1,0 +1,10 @@
+<?php
+
+return [
+    'book' => [
+        'created' => 'Book created successfully.',
+        'updated' => 'Book updated successfully.',
+        'deleted' => 'Book deleted successfully.',
+    ],
+
+];

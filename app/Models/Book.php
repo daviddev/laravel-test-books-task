@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property int $id
  * @property string $title
+ * @property string $author
  * @property string $isbn
  * @property int $copies
  * @property Carbon $published_at
@@ -26,6 +27,7 @@ class Book extends Model
      */
     protected $fillable = [
         'title',
+        'author',
         'isbn',
         'copies',
         'published_at',
