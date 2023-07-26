@@ -28,4 +28,18 @@ class UserRepository
     {
         return User::create($data);
     }
+
+    /**
+     * Book checkout.
+     *
+     * @param array $data
+     * @return void
+     */
+    public function checkoutBook(array $data): void
+    {
+        $user = User::find($data['user_id']);
+        $user->books()->attach([
+            $data['book_id'] => ['checkout_date' => now()]
+        ]);
+    }
 }

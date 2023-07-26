@@ -8,6 +8,17 @@ use Illuminate\Database\Eloquent\Collection;
 class BookRepository
 {
     /**
+     * Get Book by ID.
+     *
+     * @param int $id
+     * @return Book|null
+     */
+    public function getBookById(int $id): ?Book
+    {
+        return Book::find($id);
+    }
+
+    /**
      * Get Books.
      *
      * @return Collection

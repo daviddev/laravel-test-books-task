@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('book_id');
             $table->timestamp('checkout_date');
-            $table->timestamp('return_date');
+            $table->timestamp('return_date')->nullable();
 
             $table->unique(['user_id', 'book_id']);
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
