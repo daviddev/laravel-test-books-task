@@ -48,12 +48,14 @@ class UserService
      */
     public function returnBook(Checkout $checkout): void
     {
-        $this->checkoutRepository->updateCheckout($checkout, [
-            'return_date' => now(),
-        ]);
-        $this->bookRepository->updateBook($checkout->book, [
-            'copies' => ++$checkout->book->copies,
-        ]);
+        if (!$checkout->return_date) {
+            $this->checkoutRepository->updateCheckout($checkout, [
+                'return_date' => now(),
+            ]);
+            $this->bookRepository->updateBook($checkout->book, [
+                'copies' => ++$checkout->book->copies,
+            ]);
+        }
     }
 
 }
