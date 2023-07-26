@@ -24,5 +24,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('auth/logout', [AuthController::class, 'logout']);
     Route::apiResource('book', BookController::class);
     Route::post('checkouts', [UserController::class, 'checkoutBook']);
-    Route::post('checkouts/{id}', [UserController::class, 'returnBook']);
+    Route::post('checkouts/{checkout}', [UserController::class, 'returnBook']);
 });
